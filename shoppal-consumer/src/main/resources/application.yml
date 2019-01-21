@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: shoppal-consumer
+server:
+  port: 8080
+
+dubbo:
+  registry:
+    address: zookeeper://localhost:2181
+  consumer:
+    timeout: 3000
+  application:
+    qos:
+      enable: true
+      port: 33333
+      accept:
+        foreign:
+          ip: false
