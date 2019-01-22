@@ -37,8 +37,8 @@ public class DemoServiceImpl implements DemoService {
     public String sayHello(@QueryParam("name") String name) {
         ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();
         System.out.println(operations.get(name));
-       // operations.set(name, name + Math.random());
-        //System.out.println(operations.get(name));
+        operations.set(name, name + Math.random());
+        System.out.println(operations.get(name));
         return "Hello, " + name + " (from Spring Boot)";
     }
 }
