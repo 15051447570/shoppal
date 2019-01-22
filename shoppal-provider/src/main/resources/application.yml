@@ -40,7 +40,6 @@ dubbo:
       base-packages: com.shoppal.service.impl
   registry:
     address: zookeeper://localhost:2181
-
 mybatis:
-  typeAliasesPackage: com.shoppal.model.*
-  mapperLocations: classpath:mapper/*.xml
+  configuration:
+    mapUnderscoreToCamelCase: true

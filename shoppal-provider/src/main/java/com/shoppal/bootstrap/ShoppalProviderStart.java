@@ -25,7 +25,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * 启动类
  */
 @SpringBootApplication
-@MapperScan("com.mapper")
+@MapperScan(value = "com.shoppal.mapper.*")
 public class ShoppalProviderStart {
 
     public static void main(String[] args) {
@@ -35,5 +35,4 @@ public class ShoppalProviderStart {
                 .run(args);
 
     }
-
 }

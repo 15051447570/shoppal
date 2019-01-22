@@ -17,33 +17,13 @@
 package com.shoppal.mapper.user;
 
 import com.shoppal.model.user.User;
-import com.shoppal.model.user.UserExample;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
+import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface UserMapper {
-    int countByExample(UserExample example);
 
-    int deleteByExample(UserExample example);
-
-    int deleteByPrimaryKey(Integer id);
-
-    int insert(User record);
-
-    int insertSelective(User record);
-
-    List<User> selectByExample(UserExample example);
-
+    @Select("select * from user where id = #{id}")
     User selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
-
-    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
-
-    int updateByPrimaryKeySelective(User record);
-
-    int updateByPrimaryKey(User record);
 }
