@@ -18,6 +18,8 @@ package com.shoppal.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.shoppal.consumer.DemoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -31,10 +33,15 @@ import java.io.Serializable;
 @Service
 public class DemoServiceImpl implements DemoService {
 
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     private RedisTemplate redisTemplate;
 
     public String sayHello(@QueryParam("name") String name) {
+        logger.info("日志输出 info" + name);
+        logger.warn("日志输出 warn" + name);
+        logger.error("日志输出 error" + name);
         ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();
         System.out.println(operations.get(name));
         operations.set(name, name + Math.random());

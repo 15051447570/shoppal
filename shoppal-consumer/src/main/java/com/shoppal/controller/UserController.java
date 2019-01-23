@@ -19,6 +19,8 @@ package com.shoppal.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.shoppal.consumer.user.UserService;
 import com.shoppal.model.user.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,13 +33,18 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin//允许跨越访问
 public class UserController {
 
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Reference
     private UserService userService;
 
     @RequestMapping("/searchUser")
     public String sayHello(@RequestParam int id) {
-       User user =  userService.selectUser(id);
-       System.out.println(user == null ? "" : user.getUserName());
+        logger.info("日志输出 info");
+        logger.warn("日志输出 warn");
+        logger.error("日志输出 error");
+        User user = userService.selectUser(id);
+        System.out.println(user == null ? "" : user.getUserName());
         return user == null ? "" : user.getUserName();
     }
 

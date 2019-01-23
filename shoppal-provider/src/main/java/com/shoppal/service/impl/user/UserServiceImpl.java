@@ -20,16 +20,23 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.shoppal.consumer.user.UserService;
 import com.shoppal.mapper.user.UserMapper;
 import com.shoppal.model.user.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private UserMapper userMapper;
 
     @Override
     public User selectUser(int userId) {
+        logger.info("日志输出 info" + userId);
+        logger.warn("日志输出 warn" + userId);
+        logger.error("日志输出 error" + userId);
         return userMapper.selectByPrimaryKey(userId);
     }
 }

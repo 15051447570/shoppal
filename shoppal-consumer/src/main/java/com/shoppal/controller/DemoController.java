@@ -18,6 +18,8 @@ package com.shoppal.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.shoppal.consumer.DemoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,8 +35,13 @@ public class DemoController {
     @Reference
     private DemoService demoService;
 
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @RequestMapping("/sayHello")
     public String sayHello(@RequestParam String name) {
+        logger.info("日志输出 info");
+        logger.warn("日志输出 warn");
+        logger.error("日志输出 error");
         return demoService.sayHello(name);
     }
 
