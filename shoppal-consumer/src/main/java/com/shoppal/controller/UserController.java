@@ -37,8 +37,8 @@ public class UserController {
     @RequestMapping("/searchUser")
     public String sayHello(@RequestParam int id) {
        User user =  userService.selectUser(id);
-       System.out.println(user.getUserName());
-        return user.getUserName();
+       System.out.println(user == null ? "" : user.getUserName());
+        return user == null ? "" : user.getUserName();
     }
 
 }
