@@ -39,6 +39,8 @@ public class DemoServiceImpl implements DemoService {
     private RedisTemplate redisTemplate;
 
     public String sayHello(@QueryParam("name") String name) {
+        logger.trace("日志输出 trace" + name);
+        logger.debug("日志输出 debug" + name);
         logger.info("日志输出 info" + name);
         logger.warn("日志输出 warn" + name);
         logger.error("日志输出 error" + name);

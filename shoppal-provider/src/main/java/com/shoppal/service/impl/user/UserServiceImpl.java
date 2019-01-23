@@ -34,6 +34,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User selectUser(int userId) {
+        logger.trace("日志输出 trace" + userId);
+        logger.debug("日志输出 debug" + userId);
         logger.info("日志输出 info" + userId);
         logger.warn("日志输出 warn" + userId);
         logger.error("日志输出 error" + userId);
