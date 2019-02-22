@@ -16,3 +16,5 @@ dubbo:
       accept:
         foreign:
           ip: false
+shiro:
+  userNativeSessionManager: true

@@ -22,7 +22,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 /**
  * 启动类
  */
-@SpringBootApplication(scanBasePackages = "com.shoppal.controller")
+@SpringBootApplication(scanBasePackages = "com.shoppal")
 public class ShoppalConsumerStart {
 
     public static void main(String[] args) {
