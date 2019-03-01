@@ -1,7 +1,7 @@
-package com.shoppal.controller;
+package com.shoppal.handler;
 
 import com.shoppal.constant.Codes;
-import com.shoppal.vo.Json;
+import com.shoppal.utils.Json;
 import org.apache.shiro.ShiroException;
 import org.apache.shiro.authz.UnauthenticatedException;
 import org.apache.shiro.authz.UnauthorizedException;

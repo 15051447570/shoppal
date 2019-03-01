@@ -1,8 +1,8 @@
 package com.shoppal.controller;
 
 
+import com.shoppal.utils.Json;
 import com.shoppal.model.ShiroUser;
-import com.shoppal.vo.Json;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
