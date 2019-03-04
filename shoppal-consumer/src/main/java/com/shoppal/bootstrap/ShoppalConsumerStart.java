@@ -26,8 +26,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 public class ShoppalConsumerStart {
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(ShoppalConsumerStart.class)
-//                .profiles("prod")
-                .run(args);
+        new SpringApplicationBuilder(ShoppalConsumerStart.class).run(args);
     }
 }
